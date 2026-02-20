@@ -1,0 +1,33 @@
+{
+  "id": "default-user",
+  "skills": {
+    "dsa-recursion": {
+      "id": "dsa-recursion",
+      "name": "Recursion",
+      "category": "Recursion",
+      "masteryProbability": 0.2,
+      "confidence": 0.5,
+      "lastUpdated": "2024-01-01T00:00:00.000Z",
+      "history": []
+    },
+    "dsa-dp": {
+      "id": "dsa-dp",
+      "name": "Dynamic Programming",
+      "category": "DP",
+      "masteryProbability": 0.1,
+      "confidence": 0.4,
+      "lastUpdated": "2024-01-01T00:00:00.000Z",
+      "history": []
+    },
+    "cpp-syntax": {
+      "id": "cpp-syntax",
+      "name": "C++ Syntax",
+      "category": "C++ Syntax",
+      "masteryProbability": 0.5,
+      "confidence": 0.8,
+      "lastUpdated": "2024-01-01T00:00:00.000Z",
+      "history": []
+    }
+  },
+  "threadSummaries": []
+}
