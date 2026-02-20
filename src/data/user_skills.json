@@ -23,10 +23,16 @@
       "id": "cpp-syntax",
       "name": "C++ Syntax",
       "category": "C++ Syntax",
-      "masteryProbability": 0.5,
-      "confidence": 0.8,
-      "lastUpdated": "2024-01-01T00:00:00.000Z",
-      "history": []
+      "masteryProbability": 0.55,
+      "confidence": 0.8200000000000001,
+      "lastUpdated": "2026-02-20T20:33:13.265Z",
+      "history": [
+        {
+          "timestamp": "2026-02-20T20:33:13.265Z",
+          "change": 0.050000000000000044,
+          "reason": "Explicit user feedback on message"
+        }
+      ]
     }
   },
   "threadSummaries": []
