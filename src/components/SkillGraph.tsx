@@ -26,7 +26,7 @@ export default function SkillGraph({ refreshTrigger }: SkillGraphProps) {
 
   const fetchSkills = async () => {
     try {
-      const res = await fetch('/api/skills');
+      const res = await fetch('/api/skills', { cache: 'no-store' });
       const context: UserSkillContext = await res.json();
       
       // Transform skills map to array for Recharts

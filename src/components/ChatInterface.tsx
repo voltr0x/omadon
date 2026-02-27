@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, CheckCircle, HelpCircle, Loader2, PlusCircle } from 'lucide-react';
 import SkillGraph from './SkillGraph';
+import UserStats from './UserStats';
 import { Message } from '@/lib/types';
 import clsx from 'clsx';
 import ReactMarkdown from 'react-markdown';
@@ -110,7 +111,7 @@ export default function ChatInterface() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-slate-900 text-slate-100 font-sans">
+    <div className="flex flex-col h-screen bg-slate-900 text-slate-100 font-sans overflow-hidden">
       {/* Header */}
       <header className="p-4 border-b border-slate-700 bg-slate-900 flex justify-between items-center shrink-0">
         <div>
@@ -127,21 +128,9 @@ export default function ChatInterface() {
         </button>
       </header>
 
-      <div className="flex flex-1 min-h-0">
-        {/* Sidebar for Skills (Desktop) */}
-        <aside className="w-80 border-r border-slate-700 bg-slate-900 p-4 hidden lg:flex flex-col gap-6 overflow-y-auto shrink-0">
-          <SkillGraph refreshTrigger={skillRefreshTrigger} />
-          
-          <div className="flex-1">
-             <h3 className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Learning Path</h3>
-             <div className="text-sm text-slate-500 italic">
-               No active learning path yet. Start asking questions to build your profile.
-             </div>
-          </div>
-        </aside>
-
+      <div className="flex flex-1 min-h-0 overflow-hidden">
         {/* Chat Area */}
-        <main className="flex-1 flex flex-col relative w-full items-center bg-slate-800">
+        <main className="flex-1 flex flex-col relative w-full items-center bg-slate-800 min-h-0">
           <div className="flex-1 overflow-y-auto w-full">
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full text-slate-400 opacity-80">
@@ -268,6 +257,22 @@ export default function ChatInterface() {
             </div>
           </div>
         </main>
+
+        {/* Permanent Right Sidebar for Stats & Skills */}
+        <aside className="w-80 border-l border-slate-700 bg-slate-900 p-6 flex flex-col gap-8 overflow-y-auto shrink-0 min-h-0">
+          <UserStats refreshTrigger={skillRefreshTrigger} />
+          
+          <div className="border-t border-slate-800 pt-6">
+            <SkillGraph refreshTrigger={skillRefreshTrigger} />
+          </div>
+
+          <div className="border-t border-slate-800 pt-6">
+             <h3 className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Learning Path</h3>
+             <div className="text-sm text-slate-501 italic text-slate-500">
+               No active learning path yet.
+             </div>
+          </div>
+        </aside>
       </div>
     </div>
   );
